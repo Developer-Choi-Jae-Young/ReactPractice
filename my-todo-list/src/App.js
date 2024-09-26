@@ -12,11 +12,16 @@ function App() {
     setList([...list]);
   }
 
+  const deleteItem = (index) => {
+    list.splice(index, 1);
+    setList([...list]);
+  }
+
   return (
     <div className="App">
       <MyContainer title = "My TodoList">
         <InsertItem addItem={addItem}/>
-        <TodoList list={list}/>
+        <TodoList list={list} deleteItem={deleteItem}/>
       </MyContainer>
     </div>
   );
