@@ -1,34 +1,28 @@
-import { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Header from './components/Header';
+import Timer from './components/Timer';
+import LetterCount from './components/LetterCount';
 
 function App() {
-  const [day, setDay] = useState(new Date());
-
-  useEffect(() => {
-    setInterval(() => {
-      setDay(new Date());
-    }, 1000);
-  }, []);
-
-  const formatDate = day.toLocaleDateString('ko-KR', {
-    year: '2-digit',
-    month: '2-digit',
-    day: '2-digit'
-  });
-  const formatTime = day.toLocaleTimeString('ko-KR', {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>현재 시간</h1>
-        <p>{formatDate}</p>
-        <p>{formatTime}</p>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <header>
+          <nav>
+            <Header />
+          </nav>
+        </header>
+
+        <div style={{ border: '2px solid RGB(75, 129, 177)', height: 700, margin: 10 }}>
+          <Routes>
+            <Route path='/' element={<p>메인</p>} />
+            <Route path='/timer' element={<Timer />} />
+            <Route path='/letter' element={<LetterCount />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter >
   );
 }
 
