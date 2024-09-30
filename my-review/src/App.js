@@ -3,8 +3,22 @@ import './App.css';
 import Header from './components/Header';
 import Timer from './components/Timer';
 import LetterCount from './components/LetterCount';
+import Home from './components/Home';
+import { createContext, useState } from 'react';
+
+export const ResultContext = createContext();
+let defaultUser = {
+  id: '',
+  pwd: ''
+}
 
 function App() {
+  const [loginUser, setloginUser] = useState(defaultUser);
+  const defaultContext = {
+    data: loginUser,
+    setData: setloginUser
+  }
+  
   return (
     <BrowserRouter>
       <div className="App">
@@ -15,11 +29,13 @@ function App() {
         </header>
 
         <div style={{ border: '2px solid RGB(75, 129, 177)', height: 700, margin: 10 }}>
-          <Routes>
-            <Route path='/' element={<p>메인</p>} />
-            <Route path='/timer' element={<Timer />} />
-            <Route path='/letter' element={<LetterCount />} />
-          </Routes>
+          <ResultContext.Provider value={defaultContext}>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/timer' element={<Timer />} />
+              <Route path='/letter' element={<LetterCount />} />
+            </Routes>
+          </ResultContext.Provider>
         </div>
       </div>
     </BrowserRouter >
