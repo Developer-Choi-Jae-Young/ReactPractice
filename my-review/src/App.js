@@ -5,6 +5,7 @@ import Timer from './components/Timer';
 import LetterCount from './components/LetterCount';
 import Home from './components/Home';
 import { createContext, useState } from 'react';
+import Stopwatch from './components/Stopwatch';
 
 export const ResultContext = createContext();
 let defaultUser = {
@@ -34,6 +35,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/timer' element={<Timer />} />
               <Route path='/letter' element={<LetterCount />} />
+              <Route path='/stopwatch' element={<Stopwatch />} />
             </Routes>
           </ResultContext.Provider>
         </div>
