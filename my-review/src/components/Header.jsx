@@ -16,6 +16,7 @@ const CustomLink = styled(Link)`
             <CustomLink to='/timer'>타이머</CustomLink>
             <CustomLink to='/letter'>글자 수 세기</CustomLink>
             <CustomLink to='/stopwatch'>스탑와치</CustomLink>
+            <CustomLink to='/waitlist'>대기명단</CustomLink>
         </>
     );
 }
