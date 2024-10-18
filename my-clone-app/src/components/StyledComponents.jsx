@@ -60,8 +60,21 @@ export const Nav = styled.nav`
 `;
 
 export const MyPage = styled.span`
+    display: inline;
+
     @media only screen and (max-width: 600px) {
+        display: none;
         position: absolute;
         right: 1%;
     }
 `;  
+
+export const MyHamburger = styled.span`
+    display: none;
+
+    @media only screen and (max-width: 600px) {
+        display : inline;
+        position: absolute;
+        right: 1%;
+    }
+`; 

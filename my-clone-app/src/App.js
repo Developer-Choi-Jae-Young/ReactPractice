@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { FooterText, Header, Logo, Main, MainContainer, MyPage } from './components/StyledComponents';
+import { FooterText, Header, Logo, Main, MainContainer, MyHamburger, MyPage } from './components/StyledComponents';
 import Menubar from './components/Menubar';
 
 import './App.css';
@@ -15,6 +15,7 @@ function App() {
           <Logo>NETFLIX</Logo>
           <Menubar />
           <MyPage>MyPage</MyPage>
+          <MyHamburger>☰</MyHamburger>
         </Header>
         <Main>
           {/* 메인 컨텐트 영역 */}
